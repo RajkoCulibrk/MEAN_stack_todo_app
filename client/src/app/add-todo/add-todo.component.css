@@ -1,0 +1,27 @@
+.add-todo {
+  max-width: 60%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(207, 204, 204, 0.493);
+}
+
+.spacer {
+  margin: 0 1rem;
+}
+
+.spacer input {
+  margin: 0 0.3rem;
+}
+
+@media screen and (max-width: 600px) {
+  .add-todo {
+    max-width: 80%;
+    flex-direction: column;
+  }
+
+  .spacer {
+    margin: 0rem;
+  }
+}

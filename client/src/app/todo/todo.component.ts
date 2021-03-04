@@ -1,7 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { TodoProviderService } from '../todo-provider.service';
-
+import {
+  faTrash,
+  faPenAlt,
+  faWindowClose,
+} from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-todo',
   templateUrl: './todo.component.html',
@@ -12,6 +16,9 @@ export class TodoComponent implements OnInit {
   todo;
   group: FormGroup;
   editing: boolean = false;
+  faTrash = faTrash;
+  faPenAlt = faPenAlt;
+  faWindowClose = faWindowClose;
 
   constructor(
     private fb: FormBuilder,

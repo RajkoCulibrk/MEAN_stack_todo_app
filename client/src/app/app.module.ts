@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { AuthGuard } from './auth.guard';
 import { TodoComponent } from './todo/todo.component';
+import { AddTodoComponent } from './add-todo/add-todo.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,6 +21,7 @@ import { TodoComponent } from './todo/todo.component';
     SiginComponent,
     HomeComponent,
     TodoComponent,
+    AddTodoComponent,
   ],
   imports: [
     BrowserModule,

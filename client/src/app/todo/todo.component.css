@@ -1,5 +1,5 @@
 .important {
-  background-color: rgba(255, 2, 2, 0.342) !important;
+  background-color: rgb(231, 125, 125) !important;
 }
 
 .completed {
@@ -8,7 +8,17 @@
 }
 
 .todo {
-  background: rgba(207, 204, 204, 0.24);
+  background: rgba(207, 204, 204, 0.76);
   padding: 1rem;
   border-radius: 0.5rem;
+}
+.ccc {
+  display: flex;
+  align-items: center;
+}
+
+.todo-input {
+  background: rgb(180, 189, 194);
+
+  font-weight: bold;
 }

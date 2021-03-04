@@ -8,13 +8,13 @@
       type="email"
       [attr.disabled]="editing ? null : ''"
       formControlName="text"
-      class="form-control"
-      id="inputEmail4"
+      class="form-control todo-input"
+      [id]="todo._id + '4'"
       placeholder="Todo"
     />
   </div>
-  <div class="todo-controls d-flex justify-content-between">
-    <div class="form-group form-check">
+  <div class="todo-controls d-flex justify-content-between align-items-center">
+    <div class="up form-check ccc">
       <input
         formControlName="important"
         type="checkbox"
@@ -24,7 +24,7 @@
       />
       <label class="form-check-label" [for]="todo._id + '1'">Important</label>
     </div>
-    <div class="form-group form-check">
+    <div class="form-check ccc">
       <input
         formControlName="completed"
         [attr.disabled]="editing ? null : ''"
@@ -34,14 +34,22 @@
       />
       <label class="form-check-label" [for]="todo._id">Completed</label>
     </div>
-    <button (click)="deleteTodo()" *ngIf="!editing" class="btn btn-danger">
-      Delete
+    <button
+      (click)="deleteTodo()"
+      *ngIf="!editing"
+      class="btn btn-danger btn-sm p-1 p-sm-2"
+    >
+      <fa-icon [icon]="faTrash"></fa-icon>
     </button>
-    <button (click)="updateTodo()" *ngIf="editing" class="btn btn-warning">
+    <button
+      (click)="updateTodo()"
+      *ngIf="editing"
+      class="btn btn-warning btn-sm p-1 p-sm-2"
+    >
       Update
     </button>
-    <button (click)="setEditing()" class="btn btn-primary">
-      {{ editing ? "Cancel" : "Edit" }}
+    <button (click)="setEditing()" class="btn btn-primary p-1 p-sm-2">
+      <fa-icon [icon]="editing ? faWindowClose : faPenAlt"></fa-icon>
     </button>
   </div>
 </form>

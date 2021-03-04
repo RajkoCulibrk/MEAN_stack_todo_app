@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { pipe } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Injectable({
@@ -63,6 +64,25 @@ export class TodoProviderService {
           let index = this.todos.findIndex((t) => t._id == id);
 
           this.todos.splice(index, 1, r);
+        },
+        (e) => {
+          console.log(e);
+        }
+      );
+  }
+
+  addTodo(data) {
+    this.setHeaders();
+    return this.http
+      .post(this.url, data, { headers: this.headers })
+      .pipe(
+        map((x: any) => {
+          return x;
+        })
+      )
+      .subscribe(
+        (r) => {
+          this.todos.unshift(r);
         },
         (e) => {
           console.log(e);

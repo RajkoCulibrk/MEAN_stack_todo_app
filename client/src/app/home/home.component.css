@@ -5,3 +5,9 @@
   flex-direction: column;
   justify-content: center;
 }
+
+@media screen and (max-width: 600px) {
+  .todo-list {
+    max-width: 90%;
+  }
+}

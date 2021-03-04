@@ -6,8 +6,14 @@ form.sign {
   max-width: 600px;
   background: rgba(164, 193, 209, 0.329);
   border-radius: 1rem;
+  max-width: 90%;
 }
 
 .error-message {
   color: red;
+}
+
+body {
+  background-image: url("./assets/backgound.jpg");
+  background-size: cover;
 }

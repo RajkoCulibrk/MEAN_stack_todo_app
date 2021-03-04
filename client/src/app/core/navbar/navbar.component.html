@@ -35,7 +35,11 @@
       class="btn btn-primary"
       >Signin <fa-icon [icon]="faSignInAlt"></fa-icon
     ></a>
-    <button *ngIf="provider.user" (click)="logout()" class="btn btn-primary">
+    <button
+      *ngIf="provider.user"
+      (click)="logout()"
+      class="btn btn-primary logout"
+    >
       Logout <fa-icon [icon]="faSignOutAlt"></fa-icon>
     </button>
   </div>

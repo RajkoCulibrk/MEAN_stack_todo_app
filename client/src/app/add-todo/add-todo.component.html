@@ -1,0 +1,16 @@
+<form [formGroup]="form" class="add-todo p-2">
+  <div class="d-flex align-items-center">
+    <input
+      type="text"
+      formControlName="text"
+      class="form-control"
+      placeholder="New Todo"
+    />
+  </div>
+  <div class="spacer">
+    <input type="checkbox" formControlName="important" id="inlineCheckbox1" />
+    <label class="form-check-label" for="inlineCheckbox1">Important</label>
+  </div>
+
+  <button (click)="addTodo()" class="btn btn-primary p-1 p-sm-2">Submit</button>
+</form>
