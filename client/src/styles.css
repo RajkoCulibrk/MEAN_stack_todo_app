@@ -4,13 +4,14 @@ form.sign {
   margin-top: 3rem;
   padding: 1rem;
   max-width: 600px;
-  background: rgba(164, 193, 209, 0.329);
+  background: rgba(173, 203, 219, 0.808);
   border-radius: 1rem;
   max-width: 90%;
 }
 
 .error-message {
   color: red;
+  font-weight: bold;
 }
 
 body {
