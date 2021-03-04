@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+form.sign {
+  margin: auto;
+  margin-top: 3rem;
+  padding: 1rem;
+  max-width: 600px;
+  background: rgba(164, 193, 209, 0.329);
+  border-radius: 1rem;
+}
+
+.error-message {
+  color: red;
+}

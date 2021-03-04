@@ -5,11 +5,29 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NavbarComponent } from './core/navbar/navbar.component';
-
+import { SignupComponent } from './signup/signup.component';
+import { SiginComponent } from './sigin/sigin.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './home/home.component';
+import { AuthGuard } from './auth.guard';
 @NgModule({
-  declarations: [AppComponent, NavbarComponent],
-  imports: [BrowserModule, AppRoutingModule, FontAwesomeModule],
-  providers: [],
+  declarations: [
+    AppComponent,
+    NavbarComponent,
+    SignupComponent,
+    SiginComponent,
+    HomeComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FontAwesomeModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+  ],
+  providers: [AuthGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

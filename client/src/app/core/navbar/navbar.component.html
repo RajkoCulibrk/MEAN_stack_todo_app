@@ -1,16 +1,42 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">
+  <a
+    class="navbar-brand"
+    [routerLink]="['/home']"
+    routerLinkActive="router-link-active"
+  >
     <fa-icon [icon]="faPen"></fa-icon>
-
+    <span *ngIf="provider.user">
+      {{ (provider.user?.name | titlecase) + "'s " }}
+    </span>
     Todo List</a
   >
 
-  <div class="ml-auto">
-    <a href="" class="btn btn-primary"
+  <div class="ml-auto d-flex">
+    <span
+      *ngIf="provider.user"
+      class="mr-5 d-flex flex-column text-muted logged-as"
+    >
+      <span>Logged in as:</span>
+      <span>
+        {{ provider.user?.email }}
+      </span>
+    </span>
+    <a
+      *ngIf="!provider.user && currentRoute == '/signin'"
+      [routerLink]="['/signup']"
+      routerLinkActive="router-link-active"
+      class="btn btn-primary"
       >Register <fa-icon [icon]="faUserPlus"></fa-icon
     ></a>
-    <a class="btn btn-primary"
-      >Logout <fa-icon [icon]="faSignOutAlt"></fa-icon
+    <a
+      *ngIf="!provider.user && currentRoute == '/signup'"
+      [routerLink]="['/signin']"
+      routerLinkActive="router-link-active"
+      class="btn btn-primary"
+      >Signin <fa-icon [icon]="faSignInAlt"></fa-icon
     ></a>
+    <button *ngIf="provider.user" (click)="logout()" class="btn btn-primary">
+      Logout <fa-icon [icon]="faSignOutAlt"></fa-icon>
+    </button>
   </div>
 </nav>
