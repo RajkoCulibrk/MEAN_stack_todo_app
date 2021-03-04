@@ -8,7 +8,7 @@ import { User } from './models/User';
   providedIn: 'root',
 })
 export class ProviderService {
-  url: string = 'http://localhost:5000/api/';
+  url: string = 'https://rajko-mean-todo.herokuapp.com/api/';
   user: User = null;
   token: string = null;
   errors: Object[] = [];

@@ -7,7 +7,7 @@ import { map } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class TodoProviderService {
-  url: string = 'http://localhost:5000/api/todos';
+  url: string = 'https://rajko-mean-todo.herokuapp.com/api/todos';
   headers: HttpHeaders;
   todos: { _id: string }[];
   constructor(private http: HttpClient) {}
