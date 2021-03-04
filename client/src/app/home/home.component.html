@@ -1,1 +1,5 @@
-<p>home works!</p>
+<div class="todo-list">
+  <ng-container *ngFor="let todo of todoProvider.todos">
+    <app-todo [todo]="todo"></app-todo>
+  </ng-container>
+</div>

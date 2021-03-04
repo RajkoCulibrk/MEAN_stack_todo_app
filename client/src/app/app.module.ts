@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { AuthGuard } from './auth.guard';
+import { TodoComponent } from './todo/todo.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,6 +19,7 @@ import { AuthGuard } from './auth.guard';
     SignupComponent,
     SiginComponent,
     HomeComponent,
+    TodoComponent,
   ],
   imports: [
     BrowserModule,

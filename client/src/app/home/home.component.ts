@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+import { TodoProviderService } from '../todo-provider.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-
-  constructor() { }
+  constructor(public todoProvider: TodoProviderService) {}
 
   ngOnInit(): void {
+    this.todoProvider.getTodos();
   }
-
 }

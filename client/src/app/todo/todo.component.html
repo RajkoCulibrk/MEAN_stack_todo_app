@@ -1,0 +1,47 @@
+<form [formGroup]="group" class="todo mt-4">
+  <div class="form-group">
+    <input
+      [ngClass]="{
+        important: group.get('important').value == true,
+        completed: group.get('completed').value == true
+      }"
+      type="email"
+      [attr.disabled]="editing ? null : ''"
+      formControlName="text"
+      class="form-control"
+      id="inputEmail4"
+      placeholder="Todo"
+    />
+  </div>
+  <div class="todo-controls d-flex justify-content-between">
+    <div class="form-group form-check">
+      <input
+        formControlName="important"
+        type="checkbox"
+        [attr.disabled]="editing ? null : ''"
+        class="form-check-input"
+        [id]="todo._id + '1'"
+      />
+      <label class="form-check-label" [for]="todo._id + '1'">Important</label>
+    </div>
+    <div class="form-group form-check">
+      <input
+        formControlName="completed"
+        [attr.disabled]="editing ? null : ''"
+        type="checkbox"
+        class="form-check-input"
+        [id]="todo._id"
+      />
+      <label class="form-check-label" [for]="todo._id">Completed</label>
+    </div>
+    <button (click)="deleteTodo()" *ngIf="!editing" class="btn btn-danger">
+      Delete
+    </button>
+    <button (click)="updateTodo()" *ngIf="editing" class="btn btn-warning">
+      Update
+    </button>
+    <button (click)="setEditing()" class="btn btn-primary">
+      {{ editing ? "Cancel" : "Edit" }}
+    </button>
+  </div>
+</form>
